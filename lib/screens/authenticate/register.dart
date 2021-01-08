@@ -27,20 +27,6 @@ class _RegisterState extends State<Register> {
   Widget build(BuildContext context) {
     return loading ? Loading() : Scaffold(
       backgroundColor: Colors.brown[100],
-      appBar: AppBar(
-        backgroundColor: Colors.brown[400],
-        elevation: 0.0,
-        title: Text('Register in to Brew Crew'),
-        actions: <Widget>[
-          FlatButton.icon(
-            onPressed: () {
-              widget.toggleView();
-            },
-            icon: Icon(Icons.person),
-            label: Text('Sign In'),
-          ),
-        ],
-      ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
         child: Form(
@@ -92,6 +78,14 @@ class _RegisterState extends State<Register> {
                 style: TextStyle(
                   color: Colors.red,
                   fontSize: 14,
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  widget.toggleView();
+                },
+                child: Text(
+                  'Already have an account? Log in'
                 ),
               )
             ],
